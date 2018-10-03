@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-02T07:06:13.679Z</updated>
+  <updated>2018-10-03T14:00:57.236Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SS&amp;SSR的搭建、配置与加速</title>
+    <link href="http://yoursite.com/2018/10/03/SS-SSR%E7%9A%84%E6%90%AD%E5%BB%BA%E3%80%81%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%8A%A0%E9%80%9F/"/>
+    <id>http://yoursite.com/2018/10/03/SS-SSR的搭建、配置与加速/</id>
+    <published>2018-10-03T09:40:04.000Z</published>
+    <updated>2018-10-03T14:00:57.236Z</updated>
+    
+    <content type="html"><![CDATA[<p>教大家如何搭建SS&amp;SSR，从而实现科学上网。</p><a id="more"></a><h2 id="SS-amp-SSR是什么？与VPN有什么区别？"><a href="#SS-amp-SSR是什么？与VPN有什么区别？" class="headerlink" title="SS&amp;SSR是什么？与VPN有什么区别？"></a>SS&amp;SSR是什么？与VPN有什么区别？</h2><h3 id="何为SS？"><a href="#何为SS？" class="headerlink" title="何为SS？"></a>何为SS？</h3><p>SS全称shadowsocks，一开始为个人独立开发并用作“科学上网”，后被大家所熟知和广泛使用。再后来，据说作者被请去“喝茶”，停止了该项目。</p><h3 id="何为SSR"><a href="#何为SSR" class="headerlink" title="何为SSR?"></a>何为SSR?</h3><p>SSR全称shadowsocks-R。SSR作者声称SS不够隐匿，容易被防火墙检测到，SSR在改进了混淆和协议，更难被防火墙检测到。简单地说，SSR是SS的改进版。</p><h3 id="SS-amp-SSR与VPN的区别"><a href="#SS-amp-SSR与VPN的区别" class="headerlink" title="SS&amp;SSR与VPN的区别"></a>SS&amp;SSR与VPN的区别</h3><p>目的（作用）不同，VPN是为了保证通信的安全性、私密性，不是专门为“科学上网”制定的技术；而SS/SSR则是为了转发客户端流量，绕过防火墙的检测，从而达到“科学上网”的真实意图，但是没有保证数据传输的安全性。</p><h2 id="购买VPS"><a href="#购买VPS" class="headerlink" title="购买VPS"></a>购买VPS</h2><p>如果你有VPS，请跳过这部分。<br>注：VPS必须是国外的，否则不能达到科学上网的目的。</p><p>服务器推荐使用<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>。这是老牌服务器商，不怕跑路；VPS是按小时计费的，并且如果你的IP被墙，可以直接删掉VPS，重新开一个，收费也不贵，最便宜的$3.5一个月。</p><h3 id="新用户注册"><a href="#新用户注册" class="headerlink" title="新用户注册"></a>新用户注册</h3><p>首先去<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr官网</a>，注册一个账号，链接打开的页面如下图所示：<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538561691/SSR/Vultr1.png" alt=""><br>如果你连这点英文看着都费劲的话，那还是离开吧，科学上网不适合你。</p><h3 id="Vultr充值"><a href="#Vultr充值" class="headerlink" title="Vultr充值"></a>Vultr充值</h3><p>注册完毕并验证邮箱后，进入<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>，在<strong> Billing </strong>标签下选择支付方式（支持支付宝）<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538563099/SSR/Vultr2.png" alt=""></p><h3 id="新建VPS"><a href="#新建VPS" class="headerlink" title="新建VPS"></a>新建VPS</h3><p>重置完毕后，在<strong> Servers </strong>标签下可以看见一个加号，点击，然后选择VPS的地区，推荐日本和新加坡的服务器，因为这两个地区离大陆比较近，速度会比较快，延迟会比较低；接着选VPS的操作系统，CetOS 7 *64的就行；然后就是VPS的配置了，根据个人的情况而定。（注：有一个2.5$一个月的，那一个是不提供IPv4的，也就是说如果你的终端不能链接IPv6，就不能使用，所以挑选VPS的时候，请避开这个配置。）最后点击<strong> Deploy Now </strong>。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr3.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr4.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr5.png" alt=""><br>创建完成后会在<strong> Servers </strong>标签下看见你的VPS，等待右边<strong> Status </strong>下显示<strong> Running </strong>后点击<strong> Cloud Instance </strong>，之后你会看到你创建的VPS的详细信息，请不要关闭这个页面，待会儿会用到。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573584/SSR/Vultr6.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573584/SSR/Vultr7.png" alt=""></p><h2 id="远程连接VPS"><a href="#远程连接VPS" class="headerlink" title="远程连接VPS"></a>远程连接VPS</h2><p>连接VPS有很多工具，在这里仅介绍Xshell的使用方法。</p><h3 id="下载Xshell"><a href="#下载Xshell" class="headerlink" title="下载Xshell"></a>下载Xshell</h3><p>我在这里提供<a href="https://pan.baidu.com/s/1NPUwyoUUWRIwkXdbUY_9AA" target="_blank" rel="noopener">Xshell的免费版</a>,提取码：hhiw，如果你觉得我会在软件里放后门，那么请自行到官网下载。</p><h3 id="安装Xshell"><a href="#安装Xshell" class="headerlink" title="安装Xshell"></a>安装Xshell</h3><p>这个我不想说什么。</p><h3 id="连接VPS"><a href="#连接VPS" class="headerlink" title="连接VPS"></a>连接VPS</h3><p>打开Xshell，点击新建，名称随便，主机填写刚才购买的VPS的IP地址，也就是刚才页面中的<strong> IP Address </strong>,然后点击左边一栏的<strong> 用户身份验证 </strong>，用户名输入<strong> root </strong>，密码不用我教你了吧？最后连接就是了，稍后会弹出一个窗口，点接受并保存。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell1.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell2.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575078/SSR/Xshell3.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575078/SSR/Xshell4.png" alt=""></p><h2 id="开始搭建SS-amp-SSR"><a href="#开始搭建SS-amp-SSR" class="headerlink" title="开始搭建SS&amp;SSR"></a>开始搭建SS&amp;SSR</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;教大家如何搭建SS&amp;amp;SSR，从而实现科学上网。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="SS&amp;SSR" scheme="http://yoursite.com/categories/SS-SSR/"/>
+    
+    
+      <category term="SS" scheme="http://yoursite.com/tags/SS/"/>
+    
+      <category term="SSR" scheme="http://yoursite.com/tags/SSR/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

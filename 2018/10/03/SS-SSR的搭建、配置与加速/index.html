@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538578148/SSR/Xshell7.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538579873/SSR/Xshell8.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538579873/SSR/Xshell9.png">
-<meta property="og:updated_time" content="2018-10-05T04:59:31.856Z">
+<meta property="og:updated_time" content="2018-10-05T05:02:52.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SS&amp;SSR的搭建、配置与加速">
 <meta name="twitter:description" content="教大家如何搭建SS&amp;amp;SSR，从而实现科学上网。">
@@ -347,7 +347,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  2.2k
                 </span>
               
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  8
                 </span>
               
             </div>
@@ -398,7 +398,7 @@
 <h3 id="下载Xshell"><a href="#下载Xshell" class="headerlink" title="下载Xshell"></a>下载Xshell</h3><p>我在这里提供<a href="https://pan.baidu.com/s/1NPUwyoUUWRIwkXdbUY_9AA" target="_blank" rel="noopener">Xshell的免费版</a>,提取码：hhiw，如果你觉得我会在软件里放后门，那么请自行到官网下载。</p>
 <h3 id="安装Xshell"><a href="#安装Xshell" class="headerlink" title="安装Xshell"></a>安装Xshell</h3><p>这个我不想说什么。</p>
 <h3 id="连接VPS"><a href="#连接VPS" class="headerlink" title="连接VPS"></a>连接VPS</h3><p>打开Xshell，点击新建，名称随便，主机填写刚才购买的VPS的IP地址，也就是刚才页面中的<strong> IP Address </strong>,然后点击左边一栏的<strong> 用户身份验证 </strong>，用户名输入<strong> root </strong>，密码不用我教你了吧？最后连接就是了，稍后会弹出一个窗口，点接受并保存。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell1.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell2.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575078/SSR/Xshell3.png" alt=""></p>
-<h2 id="开始搭建SS-amp-SSR"><a href="#开始搭建SS-amp-SSR" class="headerlink" title="开始搭建SS&amp;SSR"></a>开始搭建SS&amp;SSR</h2><p><strong> 注意：</strong>shadowsocks/shadowsocksR这两个只需要搭建一个就可以了！但是shadowsocks又有很多分支我推荐使用libev版，这是目前还在更新的，SSR作者已弃坑，不再跟新。</p>
+<h2 id="开始搭建SS-amp-SSR"><a href="#开始搭建SS-amp-SSR" class="headerlink" title="开始搭建SS&amp;SSR"></a>开始搭建SS&amp;SSR</h2><p><strong> 注意：</strong>shadowsocks/shadowsocksR这两个只需要搭建一个就可以了！由于SSR作者已弃坑，不再跟新。所以我只教搭建SS，搭建SSR的方法雷同，请自行找脚本。但是shadowsocks又有很多分支我推荐使用libev版，这是目前还在更新的。</p>
 <h3 id="一键搭建SS-amp-SSR"><a href="#一键搭建SS-amp-SSR" class="headerlink" title="一键搭建SS&amp;SSR"></a>一键搭建SS&amp;SSR</h3><p>在购买VPS并用Xshell连接上你刚购买的VPS后，你将看到如下图所示的界面：<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575078/SSR/Xshell4.png" alt=""><br>1.下载脚本（直接复制命令到绿色光标那里回车即可）<br><strong> 中文版： </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-libev_CN.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/shadowsocks-libev_CN.sh &amp;&amp; bash shadowsocks-libev_CN.sh</span><br></pre></td></tr></table></figure></p>
 <p><strong> 英文版：（如果中文版执行后出现乱码，那么请使用这个） </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/shadowsocks-libev.sh &amp;&amp; bash shadowsocks-libev.sh</span><br></pre></td></tr></table></figure></p>
 <p>回车后系统会自行下载脚本并运行,如下图所示（如果你要重新安装或者卸载请在命令行输入：<strong> bash shadowsocks-libev_CN.sh </strong>,英文版请输入：<strong> bash shadowsocks-libev.sh </strong>）。<br><strong> 如果无法下载，请更改VPS的DNS地址为8.8.8.8，具体请百度。 </strong><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538577202/SSR/Xshell5.png" alt=""><br>2.输入Shadowsocks的连接密码，回车。<strong> （如果密码输错了，请按住 Ctrl 键后再按删除键，直接按删除键是不能删除的。或者修改连接VPS的属性，这个我到文章最后教大家） </strong><br>3.设置SS端口，不要使用22端口，推荐80/443/8080端口，使用高位端口容易被防火墙检测，导致VPS被墙，那样就用不了了。<br>4.设置SS加密，推荐<strong> 3)aes-256-cfb </strong>或<strong> 6)chacha20 </strong>（直接输入前面的数字回车就行）<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538578148/SSR/Xshell6.png" alt=""><br>5.确认以上信息无误后，回车继续。安装过程耗时 2~5 分钟，完成后请把红框里的信息保存下来，方便以后查询使用 。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538578148/SSR/Xshell7.png" alt=""></p>
@@ -647,7 +647,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.1k字</span>
+  <span class="post-count">博客全站共2.2k字</span>
 </div>
         
 

@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://slanceli.github.io/"/>
   <updated>2018-10-20T01:37:44.925Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://slanceli.github.io/</id>
   
   <author>
     <name>Slanceli</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>SS&amp;SSR的搭建、配置与加速</title>
-    <link href="http://yoursite.com/2018/10/03/SS-SSR%E7%9A%84%E6%90%AD%E5%BB%BA%E3%80%81%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%8A%A0%E9%80%9F/"/>
-    <id>http://yoursite.com/2018/10/03/SS-SSR的搭建、配置与加速/</id>
+    <link href="https://slanceli.github.io/2018/10/03/SS-SSR%E7%9A%84%E6%90%AD%E5%BB%BA%E3%80%81%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%8A%A0%E9%80%9F/"/>
+    <id>https://slanceli.github.io/2018/10/03/SS-SSR的搭建、配置与加速/</id>
     <published>2018-10-03T09:40:04.000Z</published>
     <updated>2018-10-20T01:37:44.925Z</updated>
     
@@ -31,12 +31,12 @@
     
     </summary>
     
-      <category term="SS&amp;SSR" scheme="http://yoursite.com/categories/SS-SSR/"/>
+      <category term="SS&amp;SSR" scheme="https://slanceli.github.io/categories/SS-SSR/"/>
     
     
-      <category term="SS" scheme="http://yoursite.com/tags/SS/"/>
+      <category term="SS" scheme="https://slanceli.github.io/tags/SS/"/>
     
-      <category term="SSR" scheme="http://yoursite.com/tags/SSR/"/>
+      <category term="SSR" scheme="https://slanceli.github.io/tags/SSR/"/>
     
   </entry>
   

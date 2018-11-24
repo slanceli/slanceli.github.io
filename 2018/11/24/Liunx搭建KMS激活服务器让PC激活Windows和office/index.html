@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="google-site-verification" content="1IshOWOj4ZovurQrFWCAdqx1kFt1V-cRESUPiUpVQXI" />
+<meta name="baidu-site-verification" content="mLv3Bo770e" />
+<meta name="msvalidate.01" content="5ADD076775E128493C8D8C3B342BD084" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Windows激活," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="纸笺流华" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="在Linux中快速搭建KMS激活服务器，让PC激活Windows和Office并自动续期，告别网上不明激活软件。">
+<meta name="keywords" content="Windows激活">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Liunx搭建KMS激活服务器让PC激活Windows和office">
+<meta property="og:url" content="https://slanceli.github.io/2018/11/24/Liunx搭建KMS激活服务器让PC激活Windows和office/index.html">
+<meta property="og:site_name" content="纸笺流华">
+<meta property="og:description" content="在Linux中快速搭建KMS激活服务器，让PC激活Windows和Office并自动续期，告别网上不明激活软件。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-24T07:48:54.427Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Liunx搭建KMS激活服务器让PC激活Windows和office">
+<meta name="twitter:description" content="在Linux中快速搭建KMS激活服务器，让PC激活Windows和Office并自动续期，告别网上不明激活软件。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://slanceli.github.io/2018/11/24/Liunx搭建KMS激活服务器让PC激活Windows和office/"/>
+
+
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "fc190d0e app_id"
+    });
+  daovoice('update');
+  </script>
+
+  <title>Liunx搭建KMS激活服务器让PC激活Windows和office | 纸笺流华</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/slanceli" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">纸笺流华</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://slanceli.github.io/2018/11/24/Liunx搭建KMS激活服务器让PC激活Windows和office/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Slanceli">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="纸笺流华">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Liunx搭建KMS激活服务器让PC激活Windows和office</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-24T12:08:28+08:00">
+                2018-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在Linux中快速搭建KMS激活服务器，让PC激活Windows和Office并自动续期，告别网上不明激活软件。</p>
+<a id="more"></a>
+<h2 id="什么是KMS？"><a href="#什么是KMS？" class="headerlink" title="什么是KMS？"></a>什么是KMS？</h2><p>KMS，是 Key Management System 的缩写，也就是密钥管理系统。这里所说的 KMS，毋庸置疑就是用来激活 VOL 版本的 Windows 和 Office 的 KMS 啦。经常能在网上看到有人提供的 KMS 服务器地址，那么你有没有想过自己也来搞一个这样的服务呢？而这样的服务在 Github 上已经有开源代码实现了。<br>本文就是在这个<a href="https://github.com/Wind4/vlmcsd" target="_blank" rel="noopener">开源代码</a>的基础上，开发了适用于三大 Linux 发行版的一键安装 KMS 服务的脚本。</p>
+<h2 id="本脚本适用环境"><a href="#本脚本适用环境" class="headerlink" title="本脚本适用环境"></a>本脚本适用环境</h2><p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>虚拟技术：任意<br>内存要求：≥128M</p>
+<h2 id="关于脚本"><a href="#关于脚本" class="headerlink" title="关于脚本"></a>关于脚本</h2><p>1、本脚本适用于三大 Linux 发行版，其他版本则不支持。<br>2、KMS 服务安装完成后会加入开机自启动。<br>3、默认记录日志，其日志位于 /var/log/vlmcsd.log。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用root用户登录（最好使用VPS）</p>
+<h3 id="下载最新版本"><a href="#下载最新版本" class="headerlink" title="下载最新版本"></a>下载最新版本</h3><p>查看最新版本<a href="https://github.com/Wind4/vlmcsd/releases" target="_blank" rel="noopener">https://github.com/Wind4/vlmcsd/releases</a></p>
+<p>输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz</span><br></pre></td></tr></table></figure></p>
+<h3 id="解压并查看"><a href="#解压并查看" class="headerlink" title="解压并查看"></a>解压并查看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf binaries.tar.gz</span><br><span class="line">cd binaries/Linux/intel/static/</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<h3 id="挑选适合自己系统的版本"><a href="#挑选适合自己系统的版本" class="headerlink" title="挑选适合自己系统的版本"></a>挑选适合自己系统的版本</h3><p>我们能看到适配各个系统的版本，<font color="#FF0000"> vlmcsd-x64-musl-static </font>或<font color="#FF0000"> vlmcsd-x86-musl-static </font>（根据你 VPS 的系统为 x86 或 x64 系统而定）。<br>接着以x64为例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x vlmcsd-x64-musl-static</span><br><span class="line">./vlmcsd-x64-musl-static</span><br></pre></td></tr></table></figure>
+<p>至此，已经部署完毕。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>安装完成后，输入以下命令查看端口号 1688 的监听情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nxtlp | grep 1688</span><br></pre></td></tr></table></figure>
+<p>返回值类似于如下这样就表示 OK 了：</p>
+<blockquote><p>tcp        0      0 0.0.0.0:1688                0.0.0.0:<em>                   LISTEN      3200/vlmcsd<br>tcp6        0      0 :::1688                     :::</em>                        LISTEN      3200/vlmcsd </p>
+</blockquote>
+<p><strong> 注：如果提示-bash: netstar: command not found,说明没有安装net-tools，输入如下代码进行安装：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install net-tools</span><br></pre></td></tr></table></figure>
+<p>安装完成后再输入netstat -nxtlp | grep 1688查看端口情况。</p>
+<p><strong> 注：如果你的防火墙默认 DROP，那么需要手动放行1688端口：</strong></p>
+<p><em>CentOS</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 1688 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p><em>Debian / Ubuntu</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#如果有 ufw 的话</span><br><span class="line">ufw allow 1688</span><br><span class="line">#如果没有的话，这么方便的防火墙工具为啥不装一个嘞~</span><br></pre></td></tr></table></figure>
+<h3 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;cd ~/binaries/Linux/intel/static/ &amp;&amp; ./vlmcsd-x64-musl-static&quot; &gt;&gt; /etc/rc.local</span><br><span class="line">chmod +x /etc/rc.local</span><br></pre></td></tr></table></figure>
+<h2 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h2><p>1、下载<a href="https://github.com/Wind4/vlmcsd/releases" target="_blank" rel="noopener">https://github.com/Wind4/vlmcsd/releases</a>,并解压</p>
+<p>2、进入<strong> \binaries\Windows\intel </strong>目录，开启 PowerShell 或者其他终端</p>
+<p>3、根据你本地的 Windows 为 x86 或 x64，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vlmcs-Windows-x86.exe -v -l 3 你的VPS的IP或者绑定的域名</span><br></pre></td></tr></table></figure>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vlmcs-Windows-x64.exe -v -l 3 你的VPS的IP或者绑定的域名</span><br></pre></td></tr></table></figure><br>其中<strong> -l 3 </strong>表示发送 Windows 10 Enterprise 2016 LTSB 的激活请求，具体版本对应列表可以通过<strong> ./vlmcs-Windows-x64.exe -x </strong>查看</p>
+<p>如果显示如下，那么就搭建成功了。</p>
+<h2 id="客户端（Windows端）使用方法"><a href="#客户端（Windows端）使用方法" class="headerlink" title="客户端（Windows端）使用方法"></a>客户端（Windows端）使用方法</h2><h3 id="获取批量授权密钥"><a href="#获取批量授权密钥" class="headerlink" title="获取批量授权密钥"></a>获取批量授权密钥</h3><p>KMS 服务，用于在线激活 VOL 版本的 Windows 和 Office。<br>激活的前提是你的系统是批量授权版本，即 VL 版，一般企业版都是 VL 版。而 VL 版本的镜像一般内置 GVLK key，用于 KMS 激活。<br>下面列表里面含有的产品的 VL 版本或者能使用 key 进入 KMS 通道的产品，都支持使用 KMS 激活。</p>
+<p>Office 2019 &amp; Office 2016：<a href="https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks</a><br>Office 2013：<a href="https://technet.microsoft.com/zh-cn/library/dn385360.aspx" target="_blank" rel="noopener">https://technet.microsoft.com/zh-cn/library/dn385360.aspx</a><br>Office 2010：<a href="https://technet.microsoft.com/zh-cn/library/ee624355(v=office.14" target="_blank" rel="noopener">https://technet.microsoft.com/zh-cn/library/ee624355(v=office.14).aspx</a>.aspx)<br>Windows：<a href="https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys</a></p>
+<h3 id="Windows的激活"><a href="#Windows的激活" class="headerlink" title="Windows的激活"></a>Windows的激活</h3><p>1、使用管理员权限运行 cmd 查看系统版本，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic os get caption</span><br></pre></td></tr></table></figure>
+<p>2、使用管理员权限运行 cmd 安装从上面列表得到的 key，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx</span><br></pre></td></tr></table></figure>
+<p>3、使用管理员权限运行 cmd 将 KMS 服务器地址设置为你自己的 IP 或 域名，后面最好再加上端口号（:1688），命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms xxx.xxx.xxx.xxx:1688</span><br></pre></td></tr></table></figure>
+<p><strong> “xxx.xxx.xxx.xxx”是你vps的公网IP地址 </strong></p>
+<p><font color="#FF0000"> 注意： </font> 本脚本所做的工作就是此步骤。当你的 KMS 服务出于启动状态，那么此处就可以设置为你自己的 KMS 服务器地址。<br>使用管理员权限运行 cmd 手动激活系统，命令如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
+<h3 id="Office的激活"><a href="#Office的激活" class="headerlink" title="Office的激活"></a>Office的激活</h3><p>关于 Office 的激活，要求必须是 VOL 版本，否则无法激活。<br>找到你的 Office 安装目录，32 位默认一般为 C:\Program Files (x86)\Microsoft Office\Office16<br>64 位默认一般为 C:\Program Files\Microsoft Office\Office16<br>Office16 是 Office 2016，Office15 就是 Office 2013，Office14 就是 Office 2010。<br>打开以上所说的目录，应该有个 OSPP.VBS 文件。<br>使用管理员权限运行 cmd 进入 Office 目录，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:你的VPS的IP或者绑定的域名</span><br><span class="line">cscript ospp.vbs /act</span><br><span class="line">cscript ospp.vbs /dstatus</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows激活/" <i class="fa fa-tag"></i> Windows激活</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/03/SS-SSR的搭建、配置与加速/" rel="next" title="SS&SSR的搭建、配置与加速">
+                <i class="fa fa-chevron-left"></i> SS&SSR的搭建、配置与加速
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.jpg"
+                alt="Slanceli" />
+            
+              <p class="site-author-name" itemprop="name">Slanceli</p>
+              <p class="site-description motion-element" itemprop="description">本人小学生，大神请绕路。QQ：443365162</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/slanceli" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/7LXUOVIFTU936JQ" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是KMS？"><span class="nav-number">1.</span> <span class="nav-text">什么是KMS？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本脚本适用环境"><span class="nav-number">2.</span> <span class="nav-text">本脚本适用环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于脚本"><span class="nav-number">3.</span> <span class="nav-text">关于脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">4.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新版本"><span class="nav-number">4.2.</span> <span class="nav-text">下载最新版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压并查看"><span class="nav-number">4.3.</span> <span class="nav-text">解压并查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挑选适合自己系统的版本"><span class="nav-number">4.4.</span> <span class="nav-text">挑选适合自己系统的版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">4.5.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开机自启"><span class="nav-number">4.6.</span> <span class="nav-text">开机自启</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地测试"><span class="nav-number">5.</span> <span class="nav-text">本地测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端（Windows端）使用方法"><span class="nav-number">6.</span> <span class="nav-text">客户端（Windows端）使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取批量授权密钥"><span class="nav-number">6.1.</span> <span class="nav-text">获取批量授权密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows的激活"><span class="nav-number">6.2.</span> <span class="nav-text">Windows的激活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Office的激活"><span class="nav-number">6.3.</span> <span class="nav-text">Office的激活</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Slanceli</span>
+
+  
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+  <!--<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>-->
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.5k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

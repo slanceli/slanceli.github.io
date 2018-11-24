@@ -108,8 +108,8 @@
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543047800/KMS/8.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543047799/KMS/4.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543048227/KMS/1.png">
-<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543047803/KMS/9.png">
-<meta property="og:updated_time" content="2018-11-24T08:33:27.443Z">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543050326/KMS/9.png">
+<meta property="og:updated_time" content="2018-11-24T09:05:41.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liunx搭建KMS激活服务器让PC激活Windows和office">
 <meta name="twitter:description" content="在Linux中快速搭建KMS激活服务器，让PC激活Windows和Office并自动续期，告别网上不明激活软件。">
@@ -450,7 +450,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
 <p>查看Windows是否成功激活：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">slmgr /xpr</span><br><span class="line">slmgr /dlv</span><br></pre></td></tr></table></figure>
-<p><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1543047803/KMS/9.png" alt=""></p>
+<p><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1543050326/KMS/9.png" alt=""></p>
 <h3 id="Office的激活"><a href="#Office的激活" class="headerlink" title="Office的激活"></a>Office的激活</h3><p>关于 Office 的激活，要求必须是 VOL 版本，否则无法激活。<br>找到你的 Office 安装目录，32 位默认一般为 C:\Program Files (x86)\Microsoft Office\Office16<br>64 位默认一般为 C:\Program Files\Microsoft Office\Office16<br>Office16 是 Office 2016，Office15 就是 Office 2013，Office14 就是 Office 2010。<br>打开以上所说的目录，应该有个 OSPP.VBS 文件。<br>使用管理员权限运行 cmd 进入 Office 目录，命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:你的VPS的IP或者绑定的域名</span><br><span class="line">cscript ospp.vbs /act</span><br><span class="line">cscript ospp.vbs /dstatus</span><br></pre></td></tr></table></figure>
 <h2 id="常见的错误对策"><a href="#常见的错误对策" class="headerlink" title="常见的错误对策"></a>常见的错误对策</h2><p>如果遇到在执行过程报错，请按以下步骤检查：<br>1，你的 KMS 服务器是否挂了？<br>2，你的 KMS 服务是否正常开启？<br>3，你的系统或 Office 是否为批量 VL 版本？<br>4，你的系统或 Office 是否修改过 Key 或未安装 GVLK Key？<br>5，你是否以管理员权限运行 cmd？<br>6，你的网络连接是否正常？<br>7，你的本地 DNS 解析是否正常？<br>8，如果你排除了以上的对策，那请根据错误提示代码自行搜索原因。</p>

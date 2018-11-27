@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543071793/KMS/14.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543071793/KMS/15.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543071793/KMS/16.png">
-<meta property="og:updated_time" content="2018-11-25T15:31:41.384Z">
+<meta property="og:updated_time" content="2018-11-27T14:22:36.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liunx搭建KMS激活服务器让PC激活Windows和office">
 <meta name="twitter:description" content="在Linux中快速搭建KMS激活服务器，让PC激活Windows和Office并自动续期，告别网上不明激活软件。">
@@ -437,8 +437,8 @@
 <h2 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h2><p>1、下载<a href="https://github.com/Wind4/vlmcsd/releases" target="_blank" rel="noopener">https://github.com/Wind4/vlmcsd/releases</a>,并解压</p>
 <p>2、进入<strong> \binaries\Windows\intel </strong>目录，开启 PowerShell 或者其他终端</p>
 <p>3、根据你本地的 Windows 为 x86 或 x64，输入如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vlmcs-Windows-x86.exe -v -l 3 你的VPS的IP或者绑定的域名</span><br></pre></td></tr></table></figure>
-<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vlmcs-Windows-x64.exe -v -1 3 你的VPS的IP或者绑定的域名</span><br></pre></td></tr></table></figure><br>其中<strong> -l 3 </strong>表示发送 Windows 10 Enterprise 2016 LTSB 的激活请求，具体版本对应列表可以通过<strong> ./vlmcs-Windows-x64.exe -x </strong>查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vlmcs-Windows-x64.exe -v -l 3 你的VPS的IP或者绑定的域名</span><br></pre></td></tr></table></figure>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vlmcs-Windows-x64.exe -v -l 3 你的VPS的IP或者绑定的域名</span><br></pre></td></tr></table></figure><br>其中<strong> -l 3 </strong>表示发送 Windows 10 Enterprise 2016 LTSB 的激活请求，具体版本对应列表可以通过<strong> ./vlmcs-Windows-x64.exe -x </strong>查看</p>
 <p>如果显示如下，那么就搭建成功了。</p>
 <p><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1543047800/KMS/8.png" alt=""></p>
 <h2 id="客户端（Windows端）使用方法"><a href="#客户端（Windows端）使用方法" class="headerlink" title="客户端（Windows端）使用方法"></a>客户端（Windows端）使用方法</h2><h3 id="获取批量授权密钥"><a href="#获取批量授权密钥" class="headerlink" title="获取批量授权密钥"></a>获取批量授权密钥</h3><p>KMS 服务，用于在线激活 VOL 版本的 Windows 和 Office。<br>激活的前提是你的系统是批量授权版本，即 VL 版，一般企业版都是 VL 版。而 VL 版本的镜像一般内置 GVLK key，用于 KMS 激活。<br>下面列表里面含有的产品的 VL 版本或者能使用 key 进入 KMS 通道的产品，都支持使用 KMS 激活。</p>

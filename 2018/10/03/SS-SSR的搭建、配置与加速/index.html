@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="google-site-verification" content="1IshOWOj4ZovurQrFWCAdqx1kFt1V-cRESUPiUpVQXI" />
+<meta name="baidu-site-verification" content="mLv3Bo770e" />
+<meta name="msvalidate.01" content="5ADD076775E128493C8D8C3B342BD084" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SS,SSR," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="纸笺流华" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="教大家如何搭建SS&amp;amp;SSR，从而实现科学上网。">
+<meta name="keywords" content="SS,SSR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SS&amp;SSR的搭建、配置与加速">
+<meta property="og:url" content="https://slanceli.github.io/2018/10/03/SS-SSR的搭建、配置与加速/index.html">
+<meta property="og:site_name" content="纸笺流华">
+<meta property="og:description" content="教大家如何搭建SS&amp;amp;SSR，从而实现科学上网。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538561691/SSR/Vultr1.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538563099/SSR/Vultr2.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr3.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr4.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr5.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573584/SSR/Vultr6.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573584/SSR/Vultr7.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell1.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell2.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575078/SSR/Xshell3.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1548474265/SSR/Xshell4.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538577202/SSR/Xshell5.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1548474265/SSR/Xshell6.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1548474264/SSR/Xshell7.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538579014/SSR/Vultr8.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538578148/SSR/Xshell7.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1539999354/SSR/Xshell8.png">
+<meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538579873/SSR/Xshell9.png">
+<meta property="og:updated_time" content="2019-01-27T09:50:28.272Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SS&amp;SSR的搭建、配置与加速">
+<meta name="twitter:description" content="教大家如何搭建SS&amp;amp;SSR，从而实现科学上网。">
+<meta name="twitter:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1538561691/SSR/Vultr1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://slanceli.github.io/2018/10/03/SS-SSR的搭建、配置与加速/"/>
+
+
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "fc190d0e app_id"
+    });
+  daovoice('update');
+  </script>
+
+  <title>SS&SSR的搭建、配置与加速 | 纸笺流华</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/slanceli" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">纸笺流华</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://slanceli.github.io/2018/10/03/SS-SSR的搭建、配置与加速/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Slanceli">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="纸笺流华">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SS&SSR的搭建、配置与加速</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T17:40:04+08:00">
+                2018-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SS-SSR/" itemprop="url" rel="index">
+                    <span itemprop="name">SS&SSR</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/03/SS-SSR的搭建、配置与加速/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/03/SS-SSR的搭建、配置与加速/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>教大家如何搭建SS&amp;SSR，从而实现科学上网。<br><a id="more"></a></p>
+<h2 id="SS-amp-SSR是什么？与VPN有什么区别？"><a href="#SS-amp-SSR是什么？与VPN有什么区别？" class="headerlink" title="SS&amp;SSR是什么？与VPN有什么区别？"></a>SS&amp;SSR是什么？与VPN有什么区别？</h2><h3 id="何为SS？"><a href="#何为SS？" class="headerlink" title="何为SS？"></a>何为SS？</h3><p>SS全称shadowsocks，一开始为个人独立开发并用作“科学上网”，后被大家所熟知和广泛使用。再后来，据说作者被请去“喝茶”，停止了该项目。</p>
+<h3 id="何为SSR"><a href="#何为SSR" class="headerlink" title="何为SSR?"></a>何为SSR?</h3><p>SSR全称shadowsocks-R。SSR作者声称SS不够隐匿，容易被防火墙检测到，SSR在改进了混淆和协议，更难被防火墙检测到。简单地说，SSR是SS的改进版。</p>
+<h3 id="SS-amp-SSR与VPN的区别"><a href="#SS-amp-SSR与VPN的区别" class="headerlink" title="SS&amp;SSR与VPN的区别"></a>SS&amp;SSR与VPN的区别</h3><p>目的（作用）不同，VPN是为了保证通信的安全性、私密性，不是专门为“科学上网”制定的技术；而SS/SSR则是为了转发客户端流量，绕过防火墙的检测，从而达到“科学上网”的真实意图，但是没有保证数据传输的安全性。</p>
+<h2 id="购买VPS"><a href="#购买VPS" class="headerlink" title="购买VPS"></a>购买VPS</h2><p>如果你有VPS，请跳过这部分。<br>注：VPS必须是国外的，否则不能达到科学上网的目的。</p>
+<p>服务器推荐使用<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>。这是老牌服务器商，不怕跑路；VPS是按小时计费的，并且如果你的IP被墙，可以直接删掉VPS，重新开一个，收费也不贵，最便宜的$3.5一个月。</p>
+<h3 id="新用户注册"><a href="#新用户注册" class="headerlink" title="新用户注册"></a>新用户注册</h3><p>首先去<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr官网</a>，注册一个账号，链接打开的页面如下图所示：<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538561691/SSR/Vultr1.png" alt=""><br>如果你连这点英文看着都费劲的话，那还是离开吧，科学上网不适合你。</p>
+<h3 id="Vultr充值"><a href="#Vultr充值" class="headerlink" title="Vultr充值"></a>Vultr充值</h3><p>注册完毕并验证邮箱后，进入<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>，在<strong> Billing </strong>标签下选择支付方式（支持支付宝）<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538563099/SSR/Vultr2.png" alt=""></p>
+<h3 id="新建VPS"><a href="#新建VPS" class="headerlink" title="新建VPS"></a>新建VPS</h3><p>重置完毕后，在<strong> Servers </strong>标签下可以看见一个加号，点击，然后选择VPS的地区，推荐日本和新加坡的服务器，因为这两个地区离大陆比较近，速度会比较快，延迟会比较低；接着选VPS的操作系统，CetOS 7 *64的就行；然后就是VPS的配置了，根据个人的情况而定。（注：有一个2.5$一个月的，那一个是不提供IPv4的，也就是说如果你的终端不能连接IPv6，就不能使用，所以挑选VPS的时候，请避开这个配置。）最后点击<strong> Deploy Now </strong>。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr3.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr4.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573156/SSR/Vultr5.png" alt=""><br>创建完成后会在<strong> Servers </strong>标签下看见你的VPS，等待右边<strong> Status </strong>下显示<strong> Running </strong>后点击<strong> Cloud Instance </strong>，之后你会看到你创建的VPS的详细信息，请不要关闭这个页面，待会儿会用到。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573584/SSR/Vultr6.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538573584/SSR/Vultr7.png" alt=""></p>
+<h2 id="远程连接VPS"><a href="#远程连接VPS" class="headerlink" title="远程连接VPS"></a>远程连接VPS</h2><p>连接VPS有很多工具，在这里仅介绍Xshell的使用方法。</p>
+<h3 id="下载Xshell"><a href="#下载Xshell" class="headerlink" title="下载Xshell"></a>下载Xshell</h3><p>我在这里提供<a href="https://pan.baidu.com/s/1NPUwyoUUWRIwkXdbUY_9AA" target="_blank" rel="noopener">Xshell的免费版</a>,提取码：hhiw，如果你觉得我会在软件里放后门，那么请自行到官网下载。</p>
+<h3 id="安装Xshell"><a href="#安装Xshell" class="headerlink" title="安装Xshell"></a>安装Xshell</h3><p>这个我不想说什么。</p>
+<h3 id="连接VPS"><a href="#连接VPS" class="headerlink" title="连接VPS"></a>连接VPS</h3><p>打开Xshell，点击新建，名称随便，主机填写刚才购买的VPS的IP地址，也就是刚才页面中的<strong> IP Address </strong>,然后点击左边一栏的<strong> 用户身份验证 </strong>，用户名输入<strong> root </strong>，密码不用我教你了吧？最后连接就是了，稍后会弹出一个窗口，点接受并保存。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell1.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575074/SSR/Xshell2.png" alt=""><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538575078/SSR/Xshell3.png" alt=""></p>
+<h2 id="开始搭建SS-amp-SSR"><a href="#开始搭建SS-amp-SSR" class="headerlink" title="开始搭建SS&amp;SSR"></a>开始搭建SS&amp;SSR</h2><p><strong> 注意：</strong>shadowsocks/shadowsocksR这两个只需要搭建一个就可以了！由于SSR作者已弃坑，不再跟新。所以我只教搭建SS，搭建SSR的方法雷同，请自行找脚本。但是shadowsocks又有很多分支我推荐使用libev版，这是目前还在更新的。</p>
+<h3 id="一键搭建SS-amp-SSR"><a href="#一键搭建SS-amp-SSR" class="headerlink" title="一键搭建SS&amp;SSR"></a>一键搭建SS&amp;SSR</h3><p>在购买VPS并用Xshell连接上你刚购买的VPS后，你将看到如下图所示的界面：<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1548474265/SSR/Xshell4.png" alt=""><br>1.下载脚本（直接复制命令到绿色光标那里回车即可）<br><strong> 中文版： </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-libev_CN.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/shadowsocks-libev_CN.sh &amp;&amp; bash shadowsocks-libev_CN.sh</span><br></pre></td></tr></table></figure></p>
+<p><strong> 英文版：（如果中文版执行后出现乱码，那么请使用这个） </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/shadowsocks-libev.sh &amp;&amp; bash shadowsocks-libev.sh</span><br></pre></td></tr></table></figure></p>
+<p>回车后系统会自行下载脚本并运行,如下图所示（如果你要重新安装或者卸载请在命令行输入：<strong> bash shadowsocks-libev_CN.sh </strong>,英文版请输入：<strong> bash shadowsocks-libev.sh </strong>）。<br><strong> 如果无法下载，请更改VPS的DNS地址为8.8.8.8，具体请百度。 </strong><br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538577202/SSR/Xshell5.png" alt=""><br>2.输入Shadowsocks的连接密码，回车。<strong> （如果密码输错了，请按住 Ctrl 键后再按删除键，直接按删除键是不能删除的。或者修改连接VPS的属性，这个我到文章最后教大家） </strong><br>3.设置SS端口，不要使用22端口，推荐80/443/8080端口，使用高位端口容易被防火墙检测，导致VPS被墙，那样就用不了了。<br>4.设置SS加密，推荐<strong> 3)aes-256-cfb </strong>或<strong> 6)chacha20 </strong>（直接输入前面的数字回车就行）<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1548474265/SSR/Xshell6.png" alt=""><br>5.确认以上信息无误后，回车继续。安装过程耗时 2~5 分钟，完成后请把红框里的信息保存下来，方便以后查询使用 。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1548474264/SSR/Xshell7.png" alt=""></p>
+<h2 id="安装TCP加速软件"><a href="#安装TCP加速软件" class="headerlink" title="安装TCP加速软件"></a>安装TCP加速软件</h2><p>前面虽然已经搭建好了 SS，但是因为服务器位于国外，连接速度会较慢，所以我们非常必要在服务器上安装 TCP 加速软件来提速。一般大家常用的 TCP 加速软件有锐速和 Google BBR 拥塞控制算法。<br>这里只教大家用Google BBR加速，因为是开源的，免费的，锐速要么花钱买，要么用破解版的，而我是比较讨厌破解版的，所以想用锐速的请自行百度或Google。<br>BBR分原版的BBR和魔改版的BBR，原版和魔改版 Google BBR 在不同地区的服务器上会有不同效果，具体孰优孰劣请分别安装进行测试。</p>
+<h3 id="原版Google-BBR"><a href="#原版Google-BBR" class="headerlink" title="原版Google BBR"></a>原版Google BBR</h3><p>连接VPS输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure><br>回车后系统会自行下载脚本并执行，脚本执行后会显示出当前系统以及系统内核版本，我们直接回车确认安装即可。<br>回车后脚本会继续执行并自动安装最新版系统内核同时开启 Google BBR 拥塞控制算法。当脚本安装完毕后会询问我们是否重启服务器，按照下图提示，我们首先输入“y”，然后回车确认重启即可。如果VPS这时候卡住了，没关系打开下图的页面，点击圈出来的按钮，等待几分钟重新连接VPS就好了。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538579014/SSR/Vultr8.png" alt=""><br>重新连接后，运行下列命令对比输出值是否一致。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure><br>执行后输出值需为：net.ipv4.tcp_available_congestion_control = reno cubic bbr。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_congestion_control</span><br></pre></td></tr></table></figure><br>执行后输出值需为：net.ipv4.tcp_congestion_control = bbr。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.core.default_qdisc</span><br></pre></td></tr></table></figure><br>执行后输出值需为：net.core.default_qdisc = fq。</p>
+<p>以上三条命令的输出值正确后则说明原版 Google BBR 已经成功安装并开机自启动。</p>
+<h3 id="魔改版Google-BBR"><a href="#魔改版Google-BBR" class="headerlink" title="魔改版Google BBR"></a>魔改版Google BBR</h3><p><strong> 注：魔改版 Google BBR 和 原版 Google BBR 不能够共存的，不要同时安装。 </strong></p>
+<p>连接VPS，然后输入下列命令：<br><em>CentOS 6/7 x64 系统请用这个</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/nanqinlang-tcp/tcp_nanqinlang/master/General/CentOS/bash/tcp_nanqinlang-1.3.2.sh &amp;&amp; bash tcp_nanqinlang-1.3.2.sh</span><br></pre></td></tr></table></figure></p>
+<p><em>Debian 7/8 x64 系统请用这个</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.4.2.1/tcp_nanqinlang-fool-1.3.0.sh &amp;&amp; bash tcp_nanqinlang-fool-1.3.0.sh</span><br></pre></td></tr></table></figure><br>先输入1，回车开始安装内核，完成后重启服务器（<strong> 重启命令：reboot </strong>）。<br>然后回到 Xshell 软件，继续安装：<br><em>CentOS 6/7 x64 系统请用这个</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash tcp_nanqinlang-1.3.2.sh</span><br></pre></td></tr></table></figure><br><em>Debian 7/8 x64 系统请用这个</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash tcp_nanqinlang-fool-1.3.0.sh</span><br></pre></td></tr></table></figure><br>回车后系统会自动运行脚本。我们输入“2”（即开启魔改版 Google BBR 算法），然后回车继续即可。<br>回车后系统会自行执行开启算法命令，然后我们输入“y”，然后回车即可继续开启。<br>当最后出现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Info] tcp_nanqinlang is installed!</span><br><span class="line">[Info] tcp_nanqinlang is running!</span><br></pre></td></tr></table></figure><br>代表魔改版Google BBR 已经成功安装并开机自启动。</p>
+<h2 id="SS客户端的安装与配置"><a href="#SS客户端的安装与配置" class="headerlink" title="SS客户端的安装与配置"></a>SS客户端的安装与配置</h2><h3 id="客户端下载"><a href="#客户端下载" class="headerlink" title="客户端下载"></a>客户端下载</h3><p>我把Windows、Android、Mac的客户端都上传到我的网盘了，自行下载，如果是魅族用户，请下载魅族专用版。网盘地址：<a href="https://www.lanzous.com/b394444/" target="_blank" rel="noopener">https://www.lanzous.com/b394444/</a> 密码:6il9<br>Windows 客户端若无法运行则请先安装 NET4.6.2<br>iPhone/iPad 客户端：请通过电脑版 PP 助手安装 Shadowrocket。</p>
+<h3 id="客户端安装"><a href="#客户端安装" class="headerlink" title="客户端安装"></a>客户端安装</h3><p>无需废话</p>
+<h3 id="客户端的配置"><a href="#客户端的配置" class="headerlink" title="客户端的配置"></a>客户端的配置</h3><p>直接把红框里的信息挨个填入就好了，其他保持默认，或者直接把红框里下面的那一串代码复制到客户端导入就行，具体请自行研究。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538578148/SSR/Xshell7.png" alt=""></p>
+<h2 id="更改键盘属性"><a href="#更改键盘属性" class="headerlink" title="更改键盘属性"></a>更改键盘属性</h2><p>打开Xshell，点击属性，如下图所示。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1539999354/SSR/Xshell8.png" alt=""><br>然后点左边菜单栏的<strong> 键盘 </strong>，修改成如下图所示的样子。<br><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1538579873/SSR/Xshell9.png" alt=""><br>确定就行了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SS/" <i class="fa fa-tag"></i> SS</a>
+          
+            <a href="/tags/SSR/" <i class="fa fa-tag"></i> SSR</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/24/Liunx搭建KMS激活服务器让PC激活Windows和office/" rel="prev" title="Liunx搭建KMS激活服务器让PC激活Windows和office">
+                Liunx搭建KMS激活服务器让PC激活Windows和office <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.jpg"
+                alt="Slanceli" />
+            
+              <p class="site-author-name" itemprop="name">Slanceli</p>
+              <p class="site-description motion-element" itemprop="description">我只是一名小学生，请不要乱喷。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/slanceli" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/7LXUOVIFTU936JQ" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://teddysun.com/" title="秋水逸冰" target="_blank">秋水逸冰</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SS-amp-SSR是什么？与VPN有什么区别？"><span class="nav-number">1.</span> <span class="nav-text">SS&amp;SSR是什么？与VPN有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为SS？"><span class="nav-number">1.1.</span> <span class="nav-text">何为SS？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为SSR"><span class="nav-number">1.2.</span> <span class="nav-text">何为SSR?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SS-amp-SSR与VPN的区别"><span class="nav-number">1.3.</span> <span class="nav-text">SS&amp;SSR与VPN的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#购买VPS"><span class="nav-number">2.</span> <span class="nav-text">购买VPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新用户注册"><span class="nav-number">2.1.</span> <span class="nav-text">新用户注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vultr充值"><span class="nav-number">2.2.</span> <span class="nav-text">Vultr充值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建VPS"><span class="nav-number">2.3.</span> <span class="nav-text">新建VPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程连接VPS"><span class="nav-number">3.</span> <span class="nav-text">远程连接VPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载Xshell"><span class="nav-number">3.1.</span> <span class="nav-text">下载Xshell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Xshell"><span class="nav-number">3.2.</span> <span class="nav-text">安装Xshell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接VPS"><span class="nav-number">3.3.</span> <span class="nav-text">连接VPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建SS-amp-SSR"><span class="nav-number">4.</span> <span class="nav-text">开始搭建SS&amp;SSR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一键搭建SS-amp-SSR"><span class="nav-number">4.1.</span> <span class="nav-text">一键搭建SS&amp;SSR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装TCP加速软件"><span class="nav-number">5.</span> <span class="nav-text">安装TCP加速软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原版Google-BBR"><span class="nav-number">5.1.</span> <span class="nav-text">原版Google BBR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#魔改版Google-BBR"><span class="nav-number">5.2.</span> <span class="nav-text">魔改版Google BBR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SS客户端的安装与配置"><span class="nav-number">6.</span> <span class="nav-text">SS客户端的安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端下载"><span class="nav-number">6.1.</span> <span class="nav-text">客户端下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端安装"><span class="nav-number">6.2.</span> <span class="nav-text">客户端安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端的配置"><span class="nav-number">6.3.</span> <span class="nav-text">客户端的配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改键盘属性"><span class="nav-number">7.</span> <span class="nav-text">更改键盘属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Slanceli</span>
+
+  
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+  <!--<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>-->
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.7k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'f0fUFmvDthLNBcPCxClXtfw9-gzGzoHsz',
+        appKey: 'gwaCQvcC79Cz5EgdjuDe8K2K',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

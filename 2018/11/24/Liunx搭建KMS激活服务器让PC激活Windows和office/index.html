@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543071793/KMS/14.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543071793/KMS/15.png">
 <meta property="og:image" content="https://res.cloudinary.com/excitedxxoo/image/upload/v1543071793/KMS/16.png">
-<meta property="og:updated_time" content="2018-11-27T14:22:36.661Z">
+<meta property="og:updated_time" content="2019-02-15T03:32:05.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liunx搭建KMS激活服务器让PC激活Windows和office">
 <meta name="twitter:description" content="在Linux中快速搭建KMS激活服务器，让PC激活Windows和Office并自动续期，告别网上不明激活软件。">
@@ -482,7 +482,7 @@
 <p>查看Windows是否成功激活：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">slmgr /xpr</span><br><span class="line">slmgr /dlv</span><br></pre></td></tr></table></figure>
 <p><img src="https://res.cloudinary.com/excitedxxoo/image/upload/v1543050326/KMS/9.png" alt=""></p>
-<h3 id="Office的激活"><a href="#Office的激活" class="headerlink" title="Office的激活"></a>Office的激活</h3><h4 id="命令激活"><a href="#命令激活" class="headerlink" title="命令激活"></a>命令激活</h4><p>关于 Office 的激活，要求必须是 VOL 版本，否则无法激活。<br>找到你的 Office 安装目录，32 位默认一般为 C:\Program Files (x86)\Microsoft Office\Office16<br>64 位默认一般为 C:\Program Files\Microsoft Office\Office16<br>Office16 是 Office 2016，Office15 就是 Office 2013，Office14 就是 Office 2010。<br>打开以上所说的目录，应该有个 OSPP.VBS 文件。<br>使用管理员权限运行 cmd 进入 Office 目录，命令如下：</p>
+<h3 id="Office的激活"><a href="#Office的激活" class="headerlink" title="Office的激活"></a>Office的激活</h3><h4 id="命令激活"><a href="#命令激活" class="headerlink" title="命令激活"></a>命令激活</h4><p>关于 Office 的激活，要求必须是 VOL 版本，否则无法激活。<br>找到你的 Office 安装目录，32 位默认一般为 C:\Program Files (x86)\Microsoft Office\OfficeXX<br>64 位默认一般为 C:\Program Files\Microsoft Office\OfficeXX<br><strong> XX是数字，安装的版本不同，数字也就不同 </strong><br>打开以上所说的目录，应该有个 OSPP.VBS 文件。<br>使用管理员权限运行 cmd 进入 Office 目录，命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:你的VPS的IP或者绑定的域名</span><br><span class="line">cscript ospp.vbs /act</span><br><span class="line">cscript ospp.vbs /dstatus</span><br></pre></td></tr></table></figure>
 <h4 id="软件激活"><a href="#软件激活" class="headerlink" title="软件激活"></a>软件激活</h4><p>1、去官网下载<a href="https://otp.landian.la/zh-cn/" target="_blank" rel="noopener">Office Tool Plus</a></p>
 <p>2、打开<strong> Office Tool Plus.exe </strong></p>

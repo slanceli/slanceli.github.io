@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ecd73e;
+  background: #ff2deb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3158,4 +3158,8 @@ pre .javascript .function {
   font-size: 17px;
   color: #000;
   font-family: 'Lato', "PingFang SC", "STXingkai", sans-serif;
+}
+.footer {
+  font-size: 14px;
+  color: #000;
 }

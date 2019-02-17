@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2208ff;
+  background: #1a098f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3137,12 +3137,11 @@ pre .javascript .function {
   opacity: 0.9;
 }
 .header-inner {
-  background: #fff;
-  opacity: 0.9;
+  background: rgba(255,255,255,0.91);
+  opacity: 1;
 }
 .site-meta {
   background: #f76730;
-  opacity: 0.9;
 }
 .site-title {
   display: inline-block;
@@ -3162,4 +3161,32 @@ pre .javascript .function {
 .footer {
   font-size: 14px;
   color: #000;
+}
+.menu .menu-item a:hover,
+.menu-item-active a {
+  background: rgba(255,255,255,0.522);
+  border-bottom-color: rgba(220,209,209,0.588);
+}
+.menu .menu-item a {
+  position: relative;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  text-align: left;
+  line-height: inherit;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  background: rgba(255,255,255,0);
+}
+.menu-item-active a:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  right: 15px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #484848;
 }

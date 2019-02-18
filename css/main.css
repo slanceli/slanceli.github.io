@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1a098f;
+  background: #6cff0f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3166,18 +3166,6 @@ pre .javascript .function {
 .menu-item-active a {
   background: rgba(255,255,255,0.522);
   border-bottom-color: rgba(220,209,209,0.588);
-}
-.menu .menu-item a {
-  position: relative;
-  box-sizing: border-box;
-  padding: 5px 20px;
-  text-align: left;
-  line-height: inherit;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  background: rgba(255,255,255,0);
 }
 .menu-item-active a:after {
   content: " ";

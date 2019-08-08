@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2aff5d;
+  background: #bd21ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3141,17 +3141,18 @@ pre .javascript .function {
 .site-title {
   display: inline-block;
   vertical-align: top;
-  line-height: 36px;
-  font-size: 45px;
+  line-height: 40px;
+  font-size: 35px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "FZShuTi", sans-serif;
+  font-family: 'Lato', "SimHei", "SimHei", sans-serif;
   color: #000;
 }
 .site-subtitle {
   margin-top: 10px;
-  font-size: 17px;
+  font-size: 15px;
   color: #000;
-  font-family: 'Lato', "PingFang SC", "STXingkai", sans-serif;
+  font-family: 'Lato', "SimHei", "SimHei", sans-serif;
+/* text-shadow: 0 0 black; */
 }
 .footer {
   font-size: 14px;
